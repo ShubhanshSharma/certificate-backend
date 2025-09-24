@@ -77,11 +77,11 @@ MIDDLEWARE = [
 ]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
+    "http://certificate-generator-production-6bc2.up.railway.app",
     "https://certificate-generator-production-6bc2.up.railway.app",
-    "https://certificate-generator-eosin.vercel.app"
-    # Add other trusted origins if needed
-    
+    "https://certificate-generator-eosin.vercel.app",
 ]
+
 
 CORS_ALLOW_ALL_ORIGINS = True
 
