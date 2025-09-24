@@ -44,7 +44,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "certificate-generator-production-6bc2.up.railway.app",
+    "https://certificate-generator-production-6bc2.up.railway.app",
   ]
 
 
@@ -77,7 +77,7 @@ MIDDLEWARE = [
 ]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
-    "certificate-generator-production-6bc2.up.railway.app",
+    "https://certificate-generator-production-6bc2.up.railway.app",
     "https://certificate-generator-eosin.vercel.app"
     # Add other trusted origins if needed
     
