@@ -41,7 +41,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "certificate-generator-production-6bc2.up.railway.app",
+  ]
 
 
 # Application definition
@@ -73,6 +77,8 @@ MIDDLEWARE = [
 ]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
+    "certificate-generator-production-6bc2.up.railway.app",
+    "https://certificate-generator-eosin.vercel.app"
     # Add other trusted origins if needed
     
 ]
