@@ -44,7 +44,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "https://certificate-generator-production-6bc2.up.railway.app",
+    "certificate-generator-production-6bc2.up.railway.app",
   ]
 
 
