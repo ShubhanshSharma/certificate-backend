@@ -81,7 +81,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://certificate-generator-production-6bc2.up.railway.app",
     "https://certificate-generator-production-6bc2.up.railway.app",
     "https://certificate-generator-eosin.vercel.app",
-    "certificate-generator-production-6bc2.up.railway.app"
+    # "certificate-generator-production-6bc2.up.railway.app"
 ]
 
 
@@ -216,7 +216,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
 }
-
+load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 from datetime import timedelta
 
