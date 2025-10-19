@@ -1087,7 +1087,7 @@ class EventUploadView(APIView):
                 upload_preset="raw_type",
                 folder="participantlist_pdfs"
             )
-            data['participantlist_pdfs'] = participant_upload.get("secure_url")
+            data['participantList'] = participant_upload.get("secure_url")
             
         #image4
         print("PDF URL:", data.get('event_pdf'))
@@ -1095,13 +1095,13 @@ class EventUploadView(APIView):
         print("Image URL:", data.get('event_image1'))
         print("Image URL:", data.get('event_image2'))
         print("Image URL:", data.get('event_image3'))
-        print("Participant List URL:", data.get('participantlist_pdfs'))
+        print("Participant List URL:", data.get('participantList'))
 
 
         # Now validate and save using the serializer
         serializer = EventSerializer(data=data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save(created_by=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         print("Serializer Errors:", serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

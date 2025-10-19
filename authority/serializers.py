@@ -10,7 +10,7 @@
 
 # class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 #     @classmethod
-#     def get_token(cls, user):
+#     def get_token(cls, user)
 #         token = super().get_token(user)
 #         token['email'] = user.email
 #         token['roles'] = list(user.groups.values_list('name', flat=True))
@@ -177,19 +177,19 @@ class AdminUserSerializer(serializers.ModelSerializer):
         # def create(self, validated_data):
         #     validated_data['password'] = make_password(validated_data['password'])
         #     return super().create(validated_data)
-        def create(self, validated_data):
-            role = validated_data.get('role', 'Admin')
-            validated_data['password'] = make_password(validated_data['password'])
+    def create(self, validated_data):
+        role = validated_data.get('role', 'Admin')
+        validated_data['password'] = make_password(validated_data['password'])
 
-            user = CustomUser(
-                username=validated_data['username'],
-                email=validated_data['email'],
-                role=role,
-                is_staff=(role == 'Admin'),
-                is_superuser=(role == 'Super Admin'),
-            )
-            user.save()
-            return user
+        user = CustomUser(
+            username=validated_data['username'],
+            email=validated_data['email'],
+            role=role,
+            is_staff=(role == 'Admin'),
+            is_superuser=(role == 'Super Admin'),
+        )
+        user.save()
+        return user
         
 from rest_framework import serializers
 from .models import Club, Event
