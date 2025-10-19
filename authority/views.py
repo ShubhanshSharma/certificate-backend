@@ -1021,7 +1021,7 @@ class ClubListCreateView(generics.ListCreateAPIView):
 
 # Events
 class EventUploadView(APIView):
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated]
 
     def post(self, request):
         data = {key: request.data.get(key) for key in request.data}
