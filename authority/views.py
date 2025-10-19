@@ -1021,7 +1021,7 @@ class ClubListCreateView(generics.ListCreateAPIView):
 
 # Events
 class EventUploadView(APIView):
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated]
 
     def post(self, request):
         data = {key: request.data.get(key) for key in request.data}
@@ -1040,8 +1040,9 @@ class EventUploadView(APIView):
             pdf_upload = cloudinary.uploader.upload(
                 pdf_file, 
                 upload_preset="raw_type",
-                resource_type="auto", 
-                folder="events_pdfs"
+                resource_type="raw", 
+                folder="events_pdfs",
+                
             )
             raw_url = pdf_upload.get("secure_url")
             viewable_url = raw_url.replace("/upload/", "/upload/fl_attachment/")
@@ -1083,6 +1084,7 @@ class EventUploadView(APIView):
             participant_upload = cloudinary.uploader.upload(
                 participantList, 
                 resource_type="raw", 
+                upload_preset="raw_type",
                 folder="participantlist_pdfs"
             )
             data['participantlist_pdfs'] = participant_upload.get("secure_url")
