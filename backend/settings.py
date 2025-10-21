@@ -87,7 +87,15 @@ CSRF_TRUSTED_ORIGINS = [
 
 
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:8000",
+    "https://certificate-generator-production-6bc2.up.railway.app",
+    "https://certificate-generator-eosin.vercel.app",
+    "https://certificate-generator-six-chi.vercel.app",
+]
+
 
 CORS_ALLOW_CREDENTIALS = True
 
@@ -99,13 +107,13 @@ SESSION_COOKIE_SECURE = True  # only True for HTTPS
 CSRF_COOKIE_SECURE = True     # only True for HTTPS
 
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_CREDENTIALS = True
 
 
-SESSION_COOKIE_SAMESITE = None
-CSRF_COOKIE_SAMESITE = None
+# SESSION_COOKIE_SAMESITE = None
+# CSRF_COOKIE_SAMESITE = None
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -250,3 +258,4 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 FRONTEND_BASE_URL = os.getenv("FRONTEND_BASE_URL", "http://localhost:5173")
+# CORS_ALLOW_ALL_ORIGINS = True
