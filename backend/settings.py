@@ -36,7 +36,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-rx_qyy5wzq&37p5_q+-wn!1qvxl%e@my53i*yz-$m&07y@!oli'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -45,6 +44,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "certificate-generator-production-6bc2.up.railway.app",
+    
   ]
 
 
@@ -81,6 +81,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://certificate-generator-production-6bc2.up.railway.app",
     "https://certificate-generator-production-6bc2.up.railway.app",
     "https://certificate-generator-eosin.vercel.app",
+    "https://certificate-generator-six-chi.vercel.app",
     # "certificate-generator-production-6bc2.up.railway.app"
 ]
 
